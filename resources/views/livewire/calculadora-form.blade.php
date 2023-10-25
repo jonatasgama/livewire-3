@@ -1,4 +1,10 @@
 <form wire:submit="calculate">
+
+    <x-primary-button class="mb-5" type="button" wire:click="toLogando()">
+        Só logando <span wire:loading wire:taget="toLogando">...</span>
+    </x-primary-button>
+    <br>
+
     Evento sendo acionado pelo "submit"
     <br>
     <x-text-input placeholder="Primeiro número" wire:model="num1"/>
@@ -14,6 +20,8 @@
         <span wire:loading wire:target="calculate">Calculando...</span>
     </x-primary-button>
 
+    <x-primary-button type="button" wire:click="add10('num1')">Add 10 no 1</x-primary-button>
+    <x-primary-button type="button" wire:click="add10('num2')">Add 10 no 2</x-primary-button>
     <br>
 
     Resultado: {{ $resultado }}
